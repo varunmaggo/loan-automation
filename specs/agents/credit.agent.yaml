@@ -1,0 +1,26 @@
+name: credit_agent
+description: Analyzes creditworthiness of applicants
+version: "1.0"
+
+requirements:
+  - analyze credit score
+  - calculate debt-to-income ratio
+  - determine credit risk level
+
+capabilities:
+  - retrieve credit report
+  - calculate financial ratios
+  - generate credit analysis
+
+budgets:
+  max_tool_calls: 2
+  max_wallclock_seconds: 10
+  max_cost_usd: 0.05
+
+scopes:
+  - read
+  - credit_read
+
+required_scopes:
+  - read
+  - credit_read

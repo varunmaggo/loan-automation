@@ -1,0 +1,107 @@
+<mxfile host="app.diagrams.net" modified="2026-06-01T00:00:00.000Z" agent="Mozilla/5.0" etag="def456" version="22.0.0" type="device">
+  <diagram id="deepeval-pipeline" name="DeepEval Pipeline">
+    <mxGraphModel dx="1426" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        
+        <!-- Title with Subtitle -->
+        <mxCell id="title-main" value="DeepEval Three-Tier Evaluation Pipeline" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="400" y="100" width="800" height="40" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="subtitle-main" value="Deterministic Metrics | Fairness Analysis | LLM Judge | CI/CD Integration" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=2;fontColor=#666666" vertex="1" parent="1">
+          <mxGeometry x="400" y="140" width="800" height="30" as="geometry"/>
+        </mxCell>
+        
+        <!-- LoanApplication Input with Details -->
+        <mxCell id="input" value="LoanApplication&#xa;Test Input&#xa;━━━━━━━━━━━━━━&#xa;8 Test Cases&#xa;━━━━━━━━━━━━━━&#xa;• Prime (3)&#xa;• Near-Prime (3)&#xa;• High-Risk (2)&#xa;━━━━━━━━━━━━━━&#xa;Labeled Dataset" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F4FD;strokeColor=#0057A8;strokeWidth=2;fontSize=12;fontStyle=1;align=center" vertex="1" parent="1">
+          <mxGeometry x="80" y="450" width="160" height="180" as="geometry"/>
+        </mxCell>
+        
+        <!-- Fleet Run with Details -->
+        <mxCell id="fleet" value="Fleet Run&#xa;━━━━━━━━━━━━━━&#xa;Multi-Agent System&#xa;━━━━━━━━━━━━━━&#xa;Orchestrator&#xa;+ 4 Specialists&#xa;+ Decision Agent&#xa;━━━━━━━━━━━━━━&#xa;Produces:&#xa;• Decision JSON&#xa;• Tool Outputs&#xa;• Message History" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0057A8;strokeColor=#ffffff;strokeWidth=2;fontSize=11;fontStyle=1;fontColor=#ffffff;align=center" vertex="1" parent="1">
+          <mxGeometry x="300" y="450" width="160" height="180" as="geometry"/>
+        </mxCell>
+        
+        <!-- Tier 1 Metrics with Details -->
+        <mxCell id="tier1" value="TIER 1: Deterministic&#xa;━━━━━━━━━━━━━━&#xa;PolicyComplianceMetric&#xa;Threshold: 0.85&#xa;━━━━━━━━━━━━━━&#xa;SchemaValidityMetric&#xa;Threshold: 0.90&#xa;━━━━━━━━━━━━━━&#xa;ExactMatchMetric&#xa;Threshold: 0.90&#xa;━━━━━━━━━━━━━━&#xa;✓ Fast execution&#xa;✓ No LLM required&#xa;✓ Every PR" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0097A7;strokeColor=#ffffff;strokeWidth=2;fontSize=10;fontStyle=1;fontColor=#ffffff;align=center" vertex="1" parent="1">
+          <mxGeometry x="540" y="280" width="180" height="200" as="geometry"/>
+        </mxCell>
+        
+        <!-- Tier 2 Metrics with Details -->
+        <mxCell id="tier2" value="TIER 2: Slice Analysis&#xa;━━━━━━━━━━━━━━&#xa;slice_disparity()&#xa;━━━━━━━━━━━━━━&#xa;Approval Rate by Band:&#xa;• Prime: 100%&#xa;• Near-Prime: 0%&#xa;• High-Risk: 0%&#xa;━━━━━━━━━━━━━━&#xa;Fairness Gate&#xa;Bias Detection&#xa;━━━━━━━━━━━━━━&#xa;✓ Every PR" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0057A8;strokeColor=#ffffff;strokeWidth=2;fontSize=10;fontStyle=1;fontColor=#ffffff;align=center" vertex="1" parent="1">
+          <mxGeometry x="540" y="510" width="180" height="180" as="geometry"/>
+        </mxCell>
+        
+        <!-- Tier 3 Metrics with Details -->
+        <mxCell id="tier3" value="TIER 3: LLM Judge&#xa;━━━━━━━━━━━━━━&#xa;GEval&#xa;ReasonsGroundedness&#xa;━━━━━━━━━━━━━━&#xa;Threshold: 0.70&#xa;━━━━━━━━━━━━━━&#xa;Reasoning Quality&#xa;Coherence Check&#xa;━━━━━━━━━━━━━━&#xa;⚠ Optional (Nightly)&#xa;⚠ Requires API key&#xa;⚠ RUN_GEVAL=1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#002855;strokeColor=#ffffff;strokeWidth=2;fontSize=10;fontStyle=1;fontColor=#ffffff;align=center;dashed=1;dashPattern=5 5" vertex="1" parent="1">
+          <mxGeometry x="540" y="720" width="180" height="180" as="geometry"/>
+        </mxCell>
+        
+        <!-- CI Gate with Details -->
+        <mxCell id="cigate" value="CI Gate&#xa;━━━━━━━━━━━━━━&#xa;Threshold Check&#xa;━━━━━━━━━━━━━━&#xa;fail_build_if_any&#xa;_below_threshold&#xa;━━━━━━━━━━━━━━&#xa;Required Metrics:&#xa;• PolicyCompliance&#xa;• SchemaValidity&#xa;━━━━━━━━━━━━━━&#xa;Automated Decision" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#00853F;strokeColor=#ffffff;strokeWidth=2;fontSize=11;fontStyle=1;fontColor=#ffffff;align=center" vertex="1" parent="1">
+          <mxGeometry x="800" y="470" width="160" height="180" as="geometry"/>
+        </mxCell>
+        
+        <!-- PASS Output with Details -->
+        <mxCell id="pass" value="✓ PASS&#xa;━━━━━━━━━━━━━━&#xa;All Gates Passed&#xa;━━━━━━━━━━━━━━&#xa;Ready to Merge&#xa;━━━━━━━━━━━━━━&#xa;Deploy to Prod" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5EDDF;strokeColor=#00853F;strokeWidth=3;fontSize=12;fontStyle=1;align=center" vertex="1" parent="1">
+          <mxGeometry x="1040" y="400" width="140" height="120" as="geometry"/>
+        </mxCell>
+        
+        <!-- FAIL Output with Details -->
+        <mxCell id="fail" value="✗ FAIL&#xa;━━━━━━━━━━━━━━&#xa;Threshold Violated&#xa;━━━━━━━━━━━━━━&#xa;Block Merge&#xa;━━━━━━━━━━━━━━&#xa;Fix Required" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE6E6;strokeColor=#FF0000;strokeWidth=3;fontSize=12;fontStyle=1;fontColor=#CC0000;align=center" vertex="1" parent="1">
+          <mxGeometry x="1040" y="560" width="140" height="120" as="geometry"/>
+        </mxCell>
+        
+        <!-- Business Impact Box -->
+        <mxCell id="impact" value="BUSINESS IMPACT&#xa;━━━━━━━━━━━━━━&#xa;100% Policy Compliance&#xa;Automated Fairness Checks&#xa;Explainable Metrics&#xa;CI/CD Integration&#xa;━━━━━━━━━━━━━━&#xa;Reduces Manual Review&#xa;Catches Bias Early&#xa;Ensures Consistency" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0F0F0;strokeColor=#666666;strokeWidth=2;fontSize=10;fontStyle=1;align=center" vertex="1" parent="1">
+          <mxGeometry x="1260" y="450" width="200" height="180" as="geometry"/>
+        </mxCell>
+        
+        <!-- Arrows -->
+        <mxCell id="arrow1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0057A8;strokeWidth=3;endArrow=classic;endFill=1" edge="1" parent="1" source="input" target="fleet">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="arrow2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0097A7;strokeWidth=2;endArrow=classic;endFill=1" edge="1" parent="1" source="fleet" target="tier1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="arrow3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0057A8;strokeWidth=2;endArrow=classic;endFill=1" edge="1" parent="1" source="fleet" target="tier2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="arrow4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#002855;strokeWidth=2;endArrow=classic;endFill=1;dashed=1;dashPattern=5 5" edge="1" parent="1" source="fleet" target="tier3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="arrow5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0097A7;strokeWidth=2;endArrow=classic;endFill=1" edge="1" parent="1" source="tier1" target="cigate">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="arrow6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0057A8;strokeWidth=2;endArrow=classic;endFill=1" edge="1" parent="1" source="tier2" target="cigate">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="arrow7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#002855;strokeWidth=2;endArrow=classic;endFill=1;dashed=1;dashPattern=5 5" edge="1" parent="1" source="tier3" target="cigate">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="arrow8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#00853F;strokeWidth=3;endArrow=classic;endFill=1" edge="1" parent="1" source="cigate" target="pass">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="arrow9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FF0000;strokeWidth=3;endArrow=classic;endFill=1" edge="1" parent="1" source="cigate" target="fail">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <!-- Legend -->
+        <mxCell id="legend" value="Solid = Required | Dashed = Optional" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=2" vertex="1" parent="1">
+          <mxGeometry x="450" y="700" width="400" height="30" as="geometry"/>
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

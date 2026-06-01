@@ -1,0 +1,26 @@
+name: fraud_agent
+description: Detects potential fraud in loan applications
+version: "1.0"
+
+requirements:
+  - analyze application for fraud indicators
+  - calculate fraud risk score
+  - flag suspicious patterns
+
+capabilities:
+  - check fraud databases
+  - analyze patterns and anomalies
+  - generate fraud report
+
+budgets:
+  max_tool_calls: 3
+  max_wallclock_seconds: 10
+  max_cost_usd: 0.05
+
+scopes:
+  - read
+  - fraud_read
+
+required_scopes:
+  - read
+  - fraud_read

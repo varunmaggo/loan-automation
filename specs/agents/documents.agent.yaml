@@ -1,0 +1,26 @@
+name: documents_agent
+description: Verifies required documents for loan application
+version: "1.0"
+
+requirements:
+  - identify required documents
+  - verify document submission
+  - check document validity
+
+capabilities:
+  - determine document requirements
+  - verify document authenticity
+  - generate document report
+
+budgets:
+  max_tool_calls: 2
+  max_wallclock_seconds: 10
+  max_cost_usd: 0.05
+
+scopes:
+  - read
+  - documents_read
+
+required_scopes:
+  - read
+  - documents_read

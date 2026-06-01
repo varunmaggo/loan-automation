@@ -1,0 +1,32 @@
+name: triage_evaluation
+description: Evaluation metrics for loan triage system
+version: "1.0"
+
+type: custom.metrics
+
+metrics:
+  - name: PolicyComplianceMetric
+    type: custom.PolicyComplianceMetric
+    threshold: 0.85
+    description: Checks if decisions comply with lending policy
+
+  - name: SchemaValidityMetric
+    type: custom.SchemaValidityMetric
+    threshold: 0.90
+    description: Checks if output matches expected schema
+
+  - name: ExactMatchMetric
+    type: custom.ExactMatchMetric
+    threshold: 0.90
+    description: Checks for exact match with expected output
+
+  - name: slice_disparity
+    type: custom.slice_disparity
+    threshold: 0.1
+    description: Checks approval rate disparity across risk bands
+
+gates:
+  fail_build_if_any_below_threshold: true
+  required_metrics:
+    - PolicyComplianceMetric
+    - SchemaValidityMetric

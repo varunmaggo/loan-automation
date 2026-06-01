@@ -1,0 +1,68 @@
+name: tool_catalog
+description: Available tools for agent use
+version: "1.0"
+
+tools:
+  - name: check_fraud_database
+    description: Check applicant against fraud databases
+    parameters:
+      applicant_id:
+        type: string
+        required: true
+      loan_amount:
+        type: number
+        required: false
+    required_scopes:
+      - read
+      - fraud_read
+
+  - name: get_credit_report
+    description: Retrieve credit report for applicant
+    parameters:
+      applicant_id:
+        type: string
+        required: true
+      credit_score:
+        type: integer
+        required: true
+    required_scopes:
+      - read
+      - credit_read
+
+  - name: verify_identity
+    description: Verify applicant identity
+    parameters:
+      applicant_name:
+        type: string
+        required: true
+      applicant_email:
+        type: string
+        required: true
+    required_scopes:
+      - read
+      - kyc_read
+
+  - name: check_documents
+    description: Verify submitted documents
+    parameters:
+      applicant_id:
+        type: string
+        required: true
+      document_types:
+        type: array
+        required: true
+    required_scopes:
+      - read
+      - documents_read
+
+  - name: calculate_dti_ratio
+    description: Calculate debt-to-income ratio
+    parameters:
+      loan_amount:
+        type: number
+        required: true
+      annual_income:
+        type: number
+        required: true
+    required_scopes:
+      - read

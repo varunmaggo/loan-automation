@@ -1,0 +1,112 @@
+<mxfile host="65bd71144e">
+    <diagram id="multi-agent-architecture" name="Multi-Agent Architecture">
+        <mxGraphModel dx="478" dy="352" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1400" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="bg-compliance" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E8F4FD;strokeColor=#0057A8;strokeWidth=1;opacity=20" parent="1" vertex="1">
+                    <mxGeometry x="550" y="280" width="180" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="bg-risk" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFE6E6;strokeColor=#FF6B6B;strokeWidth=1;opacity=20" parent="1" vertex="1">
+                    <mxGeometry x="550" y="440" width="180" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="bg-finance" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E6F7E6;strokeColor=#00853F;strokeWidth=1;opacity=20" parent="1" vertex="1">
+                    <mxGeometry x="550" y="600" width="180" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="label-compliance" value="COMPLIANCE" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=3;fontColor=#0057A8" parent="1" vertex="1">
+                    <mxGeometry x="555" y="285" width="100" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="label-risk" value="RISK MANAGEMENT" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=3;fontColor=#FF6B6B" parent="1" vertex="1">
+                    <mxGeometry x="555" y="445" width="120" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="label-finance" value="FINANCE" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=3;fontColor=#00853F" parent="1" vertex="1">
+                    <mxGeometry x="555" y="605" width="100" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="input" value="LoanApplication&#10;Input&#10;━━━━━━━━━━━━━━&#10;• Applicant Info&#10;• Loan Amount&#10;• Credit Score&#10;• Employment" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#6666FF;strokeColor=#0057A8;strokeWidth=2;fontSize=12;fontStyle=1;align=center" parent="1" vertex="1">
+                    <mxGeometry x="80" y="520" width="160" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="orchestrator" value="Orchestrator&#10;━━━━━━━━━━━━━━&#10;Coordinates Fleet&#10;━━━━━━━━━━━━━━&#10;Budget: 8 calls&#10;Time: 30s&#10;Cost: $0.25" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#002855;strokeColor=#ffffff;strokeWidth=3;fontSize=12;fontStyle=1;fontColor=#ffffff;align=center" parent="1" vertex="1">
+                    <mxGeometry x="300" y="520" width="180" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="kyc" value="KYC Agent&#10;━━━━━━━━━━━━━━&#10;Identity Verification&#10;━━━━━━━━━━━━━━&#10;✓ Name validation&#10;✓ Address check&#10;✓ Document verify&#10;━━━━━━━━━━━━━━&#10;Budget: 2 calls | 10s" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0057A8;strokeColor=#ffffff;strokeWidth=2;fontSize=11;fontStyle=1;fontColor=#ffffff;align=center" parent="1" vertex="1">
+                    <mxGeometry x="560" y="310" width="160" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="fraud" value="Fraud Agent&#10;━━━━━━━━━━━━━━&#10;Fraud Detection&#10;━━━━━━━━━━━━━━&#10;✓ Pattern analysis&#10;✓ Risk scoring&#10;✓ Red flag check&#10;━━━━━━━━━━━━━━&#10;Budget: 3 calls | 10s" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0057A8;strokeColor=#ffffff;strokeWidth=2;fontSize=11;fontStyle=1;fontColor=#ffffff;align=center" parent="1" vertex="1">
+                    <mxGeometry x="560" y="470" width="160" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="credit" value="Credit Agent&#10;━━━━━━━━━━━━━━&#10;Credit Analysis&#10;━━━━━━━━━━━━━━&#10;✓ Score evaluation&#10;✓ DTI calculation&#10;✓ Risk banding&#10;━━━━━━━━━━━━━━&#10;Budget: 2 calls | 10s" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0057A8;strokeColor=#ffffff;strokeWidth=2;fontSize=11;fontStyle=1;fontColor=#ffffff;align=center" parent="1" vertex="1">
+                    <mxGeometry x="560" y="630" width="160" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="documents" value="Documents Agent&#10;━━━━━━━━━━━━━━&#10;Doc Verification&#10;━━━━━━━━━━━━━━&#10;✓ Completeness&#10;✓ Authenticity&#10;✓ Requirements&#10;━━━━━━━━━━━━━━&#10;Budget: 2 calls | 10s" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0057A8;strokeColor=#ffffff;strokeWidth=2;fontSize=11;fontStyle=1;fontColor=#ffffff;align=center" parent="1" vertex="1">
+                    <mxGeometry x="560" y="790" width="160" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="decision" value="Decision Agent&#10;━━━━━━━━━━━━━━&#10;Final Decision (LLM)&#10;━━━━━━━━━━━━━━&#10;Synthesizes Results&#10;Applies Policy R1-R5&#10;━━━━━━━━━━━━━━&#10;• Approve&#10;• Reject&#10;• Human Review&#10;• Fast Track&#10;━━━━━━━━━━━━━━&#10;Budget: 1 call | 10s" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#00853F;strokeColor=#ffffff;strokeWidth=3;fontSize=11;fontStyle=1;fontColor=#ffffff;align=center" parent="1" vertex="1">
+                    <mxGeometry x="800" y="490" width="180" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="output" value="TriageDecision&#10;Output&#10;━━━━━━━━━━━━━━&#10;• Recommendation&#10;• Risk Band&#10;• Reasons&#10;• Documents&#10;• Review Flag" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3333FF;strokeColor=#00853F;strokeWidth=2;fontSize=12;fontStyle=1;align=center" parent="1" vertex="1">
+                    <mxGeometry x="1060" y="520" width="160" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="toolcatalog" value="Tool Catalog&#10;━━━━━━━━━━━━━━&#10;Scoped Access Control&#10;━━━━━━━━━━━━━━&#10;• check_fraud_database&#10;• get_credit_report&#10;• verify_identity&#10;• check_documents&#10;• calculate_dti_ratio&#10;━━━━━━━━━━━━━━&#10;HMAC-SHA256 Signed" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0097A7;strokeColor=#ffffff;strokeWidth=2;fontSize=11;fontStyle=1;fontColor=#ffffff;align=center" parent="1" vertex="1">
+                    <mxGeometry x="540" y="980" width="200" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="arrow1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0057A8;strokeWidth=3;endArrow=classic;endFill=1" parent="1" source="input" target="orchestrator" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="arrow2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0057A8;strokeWidth=2;endArrow=classic;endFill=1" parent="1" source="orchestrator" target="kyc" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="arrow3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0057A8;strokeWidth=2;endArrow=classic;endFill=1" parent="1" source="orchestrator" target="fraud" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="arrow4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0057A8;strokeWidth=2;endArrow=classic;endFill=1" parent="1" source="orchestrator" target="credit" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="arrow5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0057A8;strokeWidth=2;endArrow=classic;endFill=1" parent="1" source="orchestrator" target="documents" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="arrow6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0057A8;strokeWidth=2;endArrow=classic;endFill=1" parent="1" source="kyc" target="decision" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="arrow7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0057A8;strokeWidth=2;endArrow=classic;endFill=1" parent="1" source="fraud" target="decision" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="arrow8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0057A8;strokeWidth=2;endArrow=classic;endFill=1" parent="1" source="credit" target="decision" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="arrow9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0057A8;strokeWidth=2;endArrow=classic;endFill=1" parent="1" source="documents" target="decision" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="arrow10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#00853F;strokeWidth=3;endArrow=classic;endFill=1" parent="1" source="decision" target="output" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="arrow11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0097A7;strokeWidth=2;endArrow=classic;endFill=1;dashed=1" parent="1" source="kyc" target="toolcatalog" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="arrow12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0097A7;strokeWidth=2;endArrow=classic;endFill=1;dashed=1" parent="1" source="fraud" target="toolcatalog" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="arrow13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0097A7;strokeWidth=2;endArrow=classic;endFill=1;dashed=1" parent="1" source="credit" target="toolcatalog" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="arrow14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0097A7;strokeWidth=2;endArrow=classic;endFill=1;dashed=1" parent="1" source="documents" target="toolcatalog" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="title" value="Multi-Agent Fleet Architecture for Loan Triage" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="400" y="150" width="800" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="subtitle" value="Specialized Agents | Budget-Controlled | Policy-Driven | Deterministic Testing" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=2;fontColor=#666666" parent="1" vertex="1">
+                    <mxGeometry x="400" y="190" width="800" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="metrics" value="KEY METRICS&#10;━━━━━━━━━━━━━━&#10;85% Cost Reduction&#10;70% Latency Reduction&#10;100% Audit Coverage&#10;Deterministic Testing" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0F0F0;strokeColor=#666666;strokeWidth=2;fontSize=11;fontStyle=1;align=center" parent="1" vertex="1">
+                    <mxGeometry x="1280" y="300" width="180" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="security" value="SECURITY&#10;━━━━━━━━━━━━━━&#10;HMAC-SHA256 Signing&#10;PII Redaction&#10;Scope Validation&#10;Audit Trail" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0F0F0;strokeColor=#666666;strokeWidth=2;fontSize=11;fontStyle=1;align=center" parent="1" vertex="1">
+                    <mxGeometry x="1280" y="450" width="180" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="observability" value="OBSERVABILITY&#10;━━━━━━━━━━━━━━&#10;OpenTelemetry Spans&#10;Run Artifacts (JSON)&#10;Message History&#10;Tool Call Logs" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0F0F0;strokeColor=#666666;strokeWidth=2;fontSize=11;fontStyle=1;align=center" parent="1" vertex="1">
+                    <mxGeometry x="1280" y="590" width="180" height="110" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

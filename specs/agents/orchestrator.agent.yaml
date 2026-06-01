@@ -1,0 +1,29 @@
+name: orchestrator
+description: Coordinates all agents and makes final decision
+version: "1.0"
+
+requirements:
+  - read all specialist agent outputs
+  - coordinate agent communication
+  - make final decision based on all inputs
+
+capabilities:
+  - dispatch tasks to specialist agents
+  - aggregate specialist results
+  - create final triage decision
+  - record message history
+
+budgets:
+  max_tool_calls: 8
+  max_wallclock_seconds: 30
+  max_cost_usd: 0.25
+
+scopes:
+  - read
+  - write
+  - control
+
+required_scopes:
+  - read
+  - write
+  - control

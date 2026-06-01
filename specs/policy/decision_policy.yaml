@@ -1,0 +1,55 @@
+name: decision_policy
+description: Lending decision rules
+version: "1.0"
+
+rules:
+  - name: R1
+    description: Minimum credit score requirement
+    condition: credit_score >= 600
+    action: approve if true, reject if false
+
+  - name: R2
+    description: Debt-to-income ratio limit
+    condition: dti_ratio <= 0.43
+    action: approve if true, require_conditions if false
+
+  - name: R3
+    description: Fraud risk check
+    condition: fraud_score < 0.5
+    action: approve if true, reject if false
+
+  - name: R4
+    description: KYC verification requirement
+    condition: kyc_verified == true
+    action: proceed if true, reject if false
+
+  - name: R5
+    description: Document verification requirement
+    condition: documents_verified == true
+    action: proceed if true, reject if false
+
+risk_bands:
+  prime:
+    credit_score_min: 750
+    description: Excellent credit, low risk
+  near_prime:
+    credit_score_min: 650
+    credit_score_max: 749
+    description: Good credit, moderate risk
+  high_risk:
+    credit_score_max: 649
+    description: Poor credit, high risk
+
+decision_mapping:
+  approve_fast_track:
+    condition: risk_band == "prime" and fraud_score < 0.2
+    processing_days: 1
+  approve:
+    condition: risk_band == "near_prime" or fraud_score < 0.5
+    processing_days: 3
+  human_review:
+    condition: risk_band == "high_risk" or fraud_score >= 0.5
+    processing_days: 7
+  reject:
+    condition: any_rule_violated
+    processing_days: 0

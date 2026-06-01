@@ -1,0 +1,28 @@
+name: decision_agent
+description: Makes final loan approval/rejection decision
+version: "1.0"
+
+requirements:
+  - synthesize all specialist inputs
+  - make final decision
+  - provide decision reasons
+
+capabilities:
+  - aggregate specialist results
+  - apply lending rules
+  - generate final decision
+
+budgets:
+  max_tool_calls: 1
+  max_wallclock_seconds: 10
+  max_cost_usd: 0.05
+
+scopes:
+  - read
+  - write
+  - control
+
+required_scopes:
+  - read
+  - write
+  - control

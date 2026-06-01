@@ -1,0 +1,72 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "loan-triage"
+version = "0.1.0"
+description = "Multi-agent loan triage system with DeepEval evaluation suite"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.11"
+dependencies = [
+    "pydantic>=2.6",
+    "pyyaml>=6.0",
+    "tenacity>=8.2",
+    "opentelemetry-sdk>=1.25",
+    "python-dotenv>=1.0",
+    "typer>=0.12",
+    "rich>=13.7",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4",
+    "pytest-cov>=4.1",
+    "ruff>=0.1.0",
+    "mypy>=1.5",
+    "bandit>=1.7",
+    "pip-audit>=2.7",
+]
+evals = [
+    "deepeval>=1.0",
+]
+
+[project.scripts]
+loan-triage = "loan_triage.cli:app"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q --cov=loan_triage --cov-report=term-missing --cov-fail-under=80"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+select = ["E", "F", "B", "I"]
+ignore = ["B008"]
+
+[tool.ruff.per-file-ignores]
+"__init__.py" = ["F401"]
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_calls = true
+disallow_untyped_decorators = false
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+follow_imports = "silent"
+ignore_missing_imports = true
+plugins = ["pydantic.mypy"]
+
+[tool.bandit]
+skips = ["B101", "B301"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
