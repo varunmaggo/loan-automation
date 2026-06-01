@@ -1,0 +1,88 @@
+<mxfile host="65bd71144e">
+    <diagram id="cicd-pipeline" name="CI/CD Pipeline">
+        <mxGraphModel dx="927" dy="324" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="title" value="CI/CD Pipeline: Quality → Test → Evals → Merge" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="300" y="100" width="1000" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="subtitle" value="Automated Gates | Zero Manual Review | Fail Fast | Deploy with Confidence" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=2;fontColor=#666666" parent="1" vertex="1">
+                    <mxGeometry x="300" y="140" width="1000" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="pr" value="Pull Request&#10;━━━━━━━━━━━━━━&#10;Developer Submits&#10;━━━━━━━━━━━━━━&#10;Code Changes&#10;New Features&#10;Bug Fixes&#10;━━━━━━━━━━━━━━&#10;Triggers Pipeline" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#000066;strokeColor=#0057A8;strokeWidth=2;fontSize=11;fontStyle=1;align=center" parent="1" vertex="1">
+                    <mxGeometry x="80" y="400" width="140" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="quality" value="Quality Gate&#10;━━━━━━━━━━━━━━&#10;Static Analysis&#10;━━━━━━━━━━━━━━&#10;✓ ruff (linting)&#10;✓ mypy (types)&#10;✓ bandit (security)&#10;✓ pip-audit (deps)&#10;━━━━━━━━━━━━━━&#10;⏱ ~30 seconds&#10;━━━━━━━━━━━━━━&#10;BUSINESS AREA:&#10;Code Quality" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0057A8;strokeColor=#ffffff;strokeWidth=2;fontSize=10;fontStyle=1;fontColor=#ffffff;align=center" parent="1" vertex="1">
+                    <mxGeometry x="280" y="380" width="150" height="190" as="geometry"/>
+                </mxCell>
+                <mxCell id="test" value="Test Suite&#10;━━━━━━━━━━━━━━&#10;Unit + Integration&#10;━━━━━━━━━━━━━━&#10;✓ pytest&#10;✓ ≥85% coverage&#10;✓ 12 tests&#10;━━━━━━━━━━━━━━&#10;⏱ ~2 seconds&#10;━━━━━━━━━━━━━━&#10;BUSINESS AREA:&#10;Functional&#10;Correctness" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0097A7;strokeColor=#ffffff;strokeWidth=2;fontSize=10;fontStyle=1;fontColor=#ffffff;align=center" parent="1" vertex="1">
+                    <mxGeometry x="490" y="380" width="150" height="190" as="geometry"/>
+                </mxCell>
+                <mxCell id="evals" value="DeepEval Suite&#10;━━━━━━━━━━━━━━&#10;3-Tier Metrics&#10;━━━━━━━━━━━━━━&#10;✓ Policy (0.85)&#10;✓ Schema (0.90)&#10;✓ Exact Match (0.90)&#10;✓ Fairness Check&#10;━━━━━━━━━━━━━━&#10;⏱ ~5 seconds&#10;━━━━━━━━━━━━━━&#10;BUSINESS AREA:&#10;Compliance &amp;&#10;Fairness" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#00853F;strokeColor=#ffffff;strokeWidth=2;fontSize=10;fontStyle=1;fontColor=#ffffff;align=center" parent="1" vertex="1">
+                    <mxGeometry x="700" y="380" width="150" height="190" as="geometry"/>
+                </mxCell>
+                <mxCell id="merge" value="✓ MERGE&#10;━━━━━━━━━━━━━━&#10;All Gates Passed&#10;━━━━━━━━━━━━━━&#10;Auto-Merge to Main&#10;Deploy Ready&#10;━━━━━━━━━━━━━━&#10;Confidence: HIGH&#10;━━━━━━━━━━━━━━&#10;BUSINESS IMPACT:&#10;Fast Delivery&#10;Zero Manual Review" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#000099;strokeColor=#00853F;strokeWidth=3;fontSize=10;fontStyle=1;align=center" parent="1" vertex="1">
+                    <mxGeometry x="950" y="320" width="160" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="block" value="✗ BLOCK&#10;━━━━━━━━━━━━━━&#10;Gate Failed&#10;━━━━━━━━━━━━━━&#10;Merge Blocked&#10;Fix Required&#10;━━━━━━━━━━━━━━&#10;Developer Notified&#10;━━━━━━━━━━━━━━&#10;BUSINESS IMPACT:&#10;Prevent Bad Code&#10;Maintain Quality" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE6E6;strokeColor=#FF0000;strokeWidth=3;fontSize=10;fontStyle=1;fontColor=#CC0000;align=center" parent="1" vertex="1">
+                    <mxGeometry x="950" y="540" width="160" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="metrics" value="PIPELINE METRICS&#10;━━━━━━━━━━━━━━&#10;Total Time: ~40s&#10;━━━━━━━━━━━━━━&#10;Quality: 30s&#10;Test: 2s&#10;Evals: 5s&#10;Deploy: 3s&#10;━━━━━━━━━━━━━━&#10;Success Rate: 95%&#10;False Positive: &lt;1%&#10;━━━━━━━━━━━━━━&#10;Cost per Run: $0.01" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0F0F0;strokeColor=#666666;strokeWidth=2;fontSize=10;fontStyle=1;align=center" parent="1" vertex="1">
+                    <mxGeometry x="1180" y="380" width="180" height="190" as="geometry"/>
+                </mxCell>
+                <mxCell id="arrow1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0057A8;strokeWidth=3;endArrow=classic;endFill=1" parent="1" source="pr" target="quality" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="arrow2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0057A8;strokeWidth=3;endArrow=classic;endFill=1" parent="1" source="quality" target="test" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="arrow3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0097A7;strokeWidth=3;endArrow=classic;endFill=1" parent="1" source="test" target="evals" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="arrow4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#00853F;strokeWidth=3;endArrow=classic;endFill=1" parent="1" source="evals" target="merge" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="arrow5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FF0000;strokeWidth=2;endArrow=classic;endFill=1;dashed=1;dashPattern=5 5" parent="1" source="quality" target="block" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="355" y="630"/>
+                            <mxPoint x="1030" y="630"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="arrow6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FF0000;strokeWidth=2;endArrow=classic;endFill=1;dashed=1;dashPattern=5 5" parent="1" source="test" target="block" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="565" y="630"/>
+                            <mxPoint x="1030" y="630"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="arrow7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FF0000;strokeWidth=2;endArrow=classic;endFill=1;dashed=1;dashPattern=5 5" parent="1" source="evals" target="block" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="775" y="630"/>
+                            <mxPoint x="1030" y="630"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="label1" value="STAGE 1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=3;fontColor=#0057A8" parent="1" vertex="1">
+                    <mxGeometry x="280" y="590" width="150" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="label2" value="STAGE 2" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=3;fontColor=#0097A7" parent="1" vertex="1">
+                    <mxGeometry x="490" y="590" width="150" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="label3" value="STAGE 3" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=3;fontColor=#00853F" parent="1" vertex="1">
+                    <mxGeometry x="700" y="590" width="150" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend" value="━━━ Success Path (Solid) | - - - Failure Path (Dashed)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=2;fontColor=#666666" parent="1" vertex="1">
+                    <mxGeometry x="400" y="800" width="800" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="value" value="BUSINESS VALUE&#10;━━━━━━━━━━━━━━&#10;✓ Zero Manual Review&#10;✓ Fast Feedback (&lt;1 min)&#10;✓ High Confidence&#10;✓ Prevent Regressions&#10;✓ Maintain Quality&#10;✓ Reduce Risk" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#000066;strokeColor=#0057A8;strokeWidth=2;fontSize=11;fontStyle=1;align=center" parent="1" vertex="1">
+                    <mxGeometry x="80" y="650" width="180" height="140" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
