@@ -1,0 +1,14 @@
+name: documents_agent
+description: Verifies all required documents are present and valid
+budgets:
+  max_tool_calls: 2
+  max_wallclock_seconds: 10
+  max_cost_usd: 0.05
+scopes:
+  - read
+  - documents_read
+required_documents:
+  - pay_stub
+  - bank_statement
+  - government_id
+  - proof_of_address

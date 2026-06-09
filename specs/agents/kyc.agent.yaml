@@ -1,0 +1,16 @@
+name: kyc_agent
+description: Verifies applicant identity and address using pattern matching
+budgets:
+  max_tool_calls: 2
+  max_wallclock_seconds: 10
+  max_cost_usd: 0.05
+scopes:
+  - read
+  - kyc_read
+rules:
+  - type: pattern_match
+    field: ssn
+    pattern: "^\\d{3}-\\d{2}-\\d{4}$"
+  - type: document_match
+    fields: [name, address]
+    tolerance: 0.85

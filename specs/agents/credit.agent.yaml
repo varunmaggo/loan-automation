@@ -1,0 +1,15 @@
+name: credit_agent
+description: Credit score analysis and ratio calculations
+budgets:
+  max_tool_calls: 2
+  max_wallclock_seconds: 10
+  max_cost_usd: 0.05
+scopes:
+  - read
+  - credit_read
+thresholds:
+  excellent: 750
+  good: 700
+  fair: 650
+  poor: 0
+dti_max: 0.43   # debt-to-income ratio ceiling (standard QM rule)

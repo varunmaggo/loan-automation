@@ -1,0 +1,3 @@
+pytest>=8.0
+openai>=1.0   # optional — only needed for LLM decision on borderline cases
+pyyaml>=6.0   # for loading agent specs (optional in demo, used in production)

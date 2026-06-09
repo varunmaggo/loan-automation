@@ -1,0 +1,22 @@
+name: decision_policy
+version: "1.0"
+
+fast_track_approve:
+  # All conditions must be true for instant approval
+  kyc_score_min: 0.90
+  fraud_score_max: 0.20
+  credit_score_min: 750
+  documents_complete: true
+
+auto_reject:
+  # Any condition triggers auto-rejection
+  kyc_verified: false
+  fraud_score_min: 0.70
+  credit_score_max: 580
+
+human_review:
+  # Everything else goes to human review
+  fallback: true
+
+llm_model: "gpt-4o-mini"
+llm_temperature: 0.0   # deterministic output for auditability
